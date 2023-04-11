@@ -17,6 +17,12 @@ struct Card {
     time_t End;
 };
 
+struct compareDistance {
+    bool operator()(pair<int, int> a, pair<int, int> b) {
+        return a.first > b.first;
+    }
+};
+
 class CardVector {
 public:
 
@@ -39,6 +45,10 @@ public:
     void refund(BillVector &bill);
 
     void showCard();
+
+    static int editDistance(string str1, string str2);
+
+    vector<Card> getTopMatches(const string &CardName);
 
     static bool inputName(string &CardName);
 

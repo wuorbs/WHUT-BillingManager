@@ -78,28 +78,43 @@ void CardVector::delCard() {
 
 void CardVector::queryCard() {
     string CardName;
-    string CardPwd;
     if (inputName(CardName)) {
         int CardIndex = 0;
         Card *p = isExist(CardName, CardIndex);
         if (p == nullptr) {
             system("cls");
             cout << "\n\t\t\t\t\t卡号不存在！\n\n";
+            cout << "\t\t\t\t    你是否在查询以下卡号：\n";
+            vector<Card> topMatches = getTopMatches(CardName);
+            for (int i = 0; i < topMatches.size(); i++)
+                cout << "\t\t\t\t\t卡号" << i + 1 << "：" << topMatches[i].CardName << '\n';
+            cout << "\n\t\t\t    请输入序号查询具体信息<输入0退出>：";
+            int idx;
+            cin >> idx;
+            while (idx > topMatches.size()) {
+                cout << "\n\t\t\t    输入的序号错误，请重新输入：";
+                cin >> idx;
+            }
+            if (idx == 0) return;
+            cout << "\n\t\t\t卡号\t\t状态\t余额\t上次使用时间\n";
+            cout << "\t\t\t" << topMatches[idx].CardName << "\t\t";
+            if (topMatches[idx].Status == UNUSE) cout << "未上机\t";
+            else cout << "上机\t";
+            cout << setiosflags(ios::fixed) << setprecision(2) << topMatches[idx].Balance << '\t';
+            char LastTime[20] = {0};
+            timeToString(topMatches[idx].Last, LastTime);
+            cout << LastTime << '\n';
             system("pause");
-        } else if (inputPwd(CardPwd, 0) && CardPwd == p->CardPwd) {
+        } else {
             system("cls");
-            cout << "\n\t\t卡号\t状态\t余额\t上次使用时间\n";
-            cout << "\t\t" << CardName << '\t';
+            cout << "\n\t\t\t\t卡号\t\t状态\t余额\t上次使用时间\n";
+            cout << "\t\t" << CardName << "\t\t";
             if (p->Status == UNUSE) cout << "未上机\t";
             else cout << "上机\t";
             cout << setiosflags(ios::fixed) << setprecision(2) << p->Balance << '\t';
             char LastTime[20] = {0};
             timeToString(p->Last, LastTime);
             cout << LastTime << '\n';
-            system("pause");
-        } else {
-            system("cls");
-            cout << "\n\t\t\t\t密码错误，查询卡失败！\n\n";
             system("pause");
         }
     } else {
@@ -331,6 +346,33 @@ void CardVector::refund(BillVector &bill) {
     }
 }
 
+int CardVector::editDistance(string str1, string str2) {
+    int len1 = str1.size(), len2 = str2.size();
+    vector<vector<int>> dp(len1 + 1, vector<int>(len2 + 1, 0));
+    for (int i = 0; i <= len1; i++) dp[i][0] = i;
+    for (int j = 0; j <= len2; j++) dp[0][j] = j;
+    for (int i = 1; i <= len1; i++)
+        for (int j = 1; j <= len2; j++)
+            if (str1[i - 1] == str2[j - 1]) dp[i][j] = dp[i - 1][j - 1];
+            else dp[i][j] = min(dp[i - 1][j], min(dp[i][j - 1], dp[i - 1][j - 1])) + 1;
+    return dp[len1][len2];
+}
+
+vector<Card> CardVector::getTopMatches(const string &CardName) {
+    priority_queue<pair<int, int>, vector<pair<int, int>>, compareDistance> pq;
+    vector<Card> res;
+    for (int i = 0; i < vec.size(); i++) {
+        int dist = editDistance(CardName, vec[i].CardName);
+        pq.push({dist, i});
+    }
+    for (int i = 0; i < 5 && !pq.empty(); i++) {
+        int idx = pq.top().second;
+        res.push_back(vec[idx]);
+        pq.pop();
+    }
+    return res;
+}
+
 bool CardVector::inputName(string &CardName) {
     while (true) {
         system("cls");
@@ -391,9 +433,9 @@ bool CardVector::inputPwd(string &CardPwd, int p) {
 
 void CardVector::showCard() {
     system("cls");
-    cout << "\n\t\t卡号\t状态\t余额\t上次使用时间\n";
+    cout << "\n\t\t\t卡号\t\t状态\t余额\t上次使用时间\n";
     for (auto it: vec) {
-        cout << "\t\t" << it.CardName << '\t';
+        cout << "\t\t\t" << it.CardName << "\t\t";
         if (it.Status == UNUSE) cout << "未上机\t";
         else cout << "上机\t";
         cout << setiosflags(ios::fixed) << setprecision(2) << it.Balance << '\t';

@@ -21,17 +21,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="12473dc5-32d4-43aa-bf09-8f2ae7d251b6" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BillVector.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/BillVector.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BillVector.h" beforeDir="false" afterPath="$PROJECT_DIR$/BillVector.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CardVector.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/CardVector.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CardVector.h" beforeDir="false" afterPath="$PROJECT_DIR$/CardVector.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Menu.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Menu.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Menu.h" beforeDir="false" afterPath="$PROJECT_DIR$/Menu.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/codemodel-v2-14c0470cc7ea74d1bba9.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/index-2023-03-01T07-55-48-0608.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/target-Billing_Management-Debug-c64bb9207105b4911c8a.json" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/.ninja_deps" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/.ninja_deps" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/.ninja_log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/.ninja_log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/Billing_Management.exe" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Billing_Management.exe" afterDir="false" />
@@ -40,14 +34,8 @@
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Billing_Management.dir/Menu.cpp.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Billing_Management.dir/Menu.cpp.obj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Billing_Management.dir/main.cpp.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Billing_Management.dir/main.cpp.obj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/build.ninja" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/build.ninja" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/bill.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/bill.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/card.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/card.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/price.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/price.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/global.h" beforeDir="false" afterPath="$PROJECT_DIR$/global.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/main.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tool.h" beforeDir="false" afterPath="$PROJECT_DIR$/tool.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../NinjaWiki/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/../NinjaWiki/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../NinjaWiki/zh-CN/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../NinjaWiki/zh-CN/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,7 +51,7 @@
     <option name="myRunOnSave" value="true" />
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -98,11 +86,6 @@
 }</component>
   <component name="RunManager">
     <configuration name="Billing_Management" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="true" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Billing_Management" TARGET_NAME="Billing_Management" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="Billing_Management" RUN_TARGET_NAME="Billing_Management">
-      <method v="2">
-        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
@@ -146,6 +129,7 @@
       <workItem from="1680683814654" duration="235000" />
       <workItem from="1681115991027" duration="5854000" />
       <workItem from="1681132988598" duration="4209000" />
+      <workItem from="1681195412204" duration="3690000" />
     </task>
     <servers />
   </component>

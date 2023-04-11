@@ -67,17 +67,17 @@ void BillVector::queryBill() {
     system("cls");
     string CardName;
     if (inputName(CardName)) {
-        cout << "\n\t\t卡号\t上机时间\t\t下机时间\t\t金额\t类型\n";
+        cout << "\n\t\t卡号\t\t上机时间\t\t下机时间\t\t金额\t\t类型\n";
         for (auto it: vec) {
             if (it.CardName == CardName) {
-                cout << "\t\t" << it.CardName << "\t";
+                cout << "\t\t" << it.CardName << "\t\t";
                 char StartTime[20] = {0};
                 timeToString(it.Start, StartTime);
                 cout << StartTime << "\t";
                 char EndTime[20] = {0};
                 timeToString(it.End, EndTime);
                 cout << EndTime << "\t";
-                cout << setiosflags(ios::fixed) << setprecision(2) << it.Balance << '\t';
+                cout << setiosflags(ios::fixed) << setprecision(2) << it.Balance << "\t\t";
                 if (it.Type == COST) cout << "消费\n";
                 else if (it.Type == RECHARGE) cout << "充值\n";
                 else if (it.Type == REFUND) cout << "退费\n";
@@ -93,7 +93,7 @@ void BillVector::queryBill() {
 
 void BillVector::showBill() {
     system("cls");
-    cout << "\n\t\t卡号\t\t上机时间\t\t下机时间\t\t金额\t类型\n";
+    cout << "\n\t\t卡号\t\t上机时间\t\t下机时间\t\t金额\t\t类型\n";
     for (auto it: vec) {
         cout << "\t\t" << it.CardName << "\t\t";
         char StartTime[20] = {0};
@@ -102,7 +102,7 @@ void BillVector::showBill() {
         char EndTime[20] = {0};
         timeToString(it.End, EndTime);
         cout << EndTime << '\t';
-        cout << setiosflags(ios::fixed) << setprecision(2) << it.Balance << '\t';
+        cout << setiosflags(ios::fixed) << setprecision(2) << it.Balance << "\t\t";
         if (it.Type == COST) cout << "消费\n";
         else if (it.Type == RECHARGE) cout << "充值\n";
         else if (it.Type == REFUND) cout << "退费\n";
