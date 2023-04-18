@@ -1,10 +1,13 @@
 #include "Menu.h"
 #include "global.h"
 
+// 构造函数
 Menu::Menu() = default;
 
+// 析构函数
 Menu::~Menu() = default;
 
+// 打开主菜单函数，传入卡片信息和账单信息
 void Menu::openMenu(CardVector &card, BillVector &bill) {
     int op;
     do {
@@ -40,6 +43,7 @@ void Menu::openMenu(CardVector &card, BillVector &bill) {
     } while (op != 0);
 }
 
+// 消费功能子菜单，传入卡片信息和账单信息
 void Menu::subMenu1(CardVector &card, BillVector &bill) {
     int op;
     do {
@@ -84,6 +88,7 @@ void Menu::subMenu1(CardVector &card, BillVector &bill) {
     } while (op != 0);
 }
 
+// 账户功能子菜单，传入卡片信息
 void Menu::subMenu2(CardVector &card) {
     int op;
     do {
@@ -119,6 +124,7 @@ void Menu::subMenu2(CardVector &card) {
     } while (op != 0);
 }
 
+// 管理员登陆函数，返回登陆是否成功的布尔值
 bool Menu::rootLogon() {
     string rootId;
     string rootPwd;
@@ -142,7 +148,7 @@ bool Menu::rootLogon() {
         system("cls");
         cout << "\n\t\t\t\t-------管理员功能-------\n";
         cout << "\n\t\t\t    请输入管理员密码：";
-        cin >> rootPwd;
+        rootPwd = CardVector::cinPwd();
         if (rootPwd != ROOTPWD) {
             cout << "\n\t\t\t\t输入的管理员密码不正确！\n\n";
             char ch = 'M';
@@ -157,6 +163,7 @@ bool Menu::rootLogon() {
     return true;
 }
 
+// 管理员功能子菜单，传入卡片信息和账单信息
 void Menu::subMenu3(CardVector &card, BillVector &bill) {
     if (!rootLogon()) return;
     int op;

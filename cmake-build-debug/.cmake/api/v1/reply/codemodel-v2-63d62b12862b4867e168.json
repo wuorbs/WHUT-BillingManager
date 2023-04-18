@@ -49,8 +49,8 @@
 	"kind" : "codemodel",
 	"paths" : 
 	{
-		"build" : "D:/Projects/Billing_Management/cmake-build-debug",
-		"source" : "D:/Projects/Billing_Management"
+		"build" : "D:/Projects/Billing_Manager/cmake-build-debug",
+		"source" : "D:/Projects/Billing_Manager"
 	},
 	"version" : 
 	{

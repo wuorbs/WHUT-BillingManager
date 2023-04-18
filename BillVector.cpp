@@ -2,6 +2,7 @@
 #include "global.h"
 #include "tool.h"
 
+// 构造函数，用于初始化 BillVector 类的属性
 BillVector::BillVector(const string &pricePATH, const string &billPATH) {
     ifstream pricefile(pricePATH, ios::in | ios::binary);
     if (!pricefile.is_open()) return;
@@ -18,14 +19,17 @@ BillVector::BillVector(const string &pricePATH, const string &billPATH) {
     billfile.close();
 }
 
+// 获取 Price 属性值
 double BillVector::getPrice() const { return Price; }
 
+// 检查 Price 属性值
 void BillVector::checkPrice() const {
     system("cls");
     cout << "\n\t\t\t\t当前价格为：" << setprecision(2) << Price << "/分钟\n\n";
     system("pause");
 }
 
+/ 重置 Price 属性值
 void BillVector::resetPrice() {
     double NewPrice;
     system("cls");
@@ -39,10 +43,12 @@ void BillVector::resetPrice() {
     system("pause");
 }
 
+// 添加 Bill 对象
 void BillVector::addBill(Bill billi) {
     vec.push_back(billi);
 }
 
+// 静态方法，用于输入卡片名称
 bool BillVector::inputName(string &CardName) {
     while (true) {
         system("cls");
@@ -63,6 +69,7 @@ bool BillVector::inputName(string &CardName) {
     return true;
 }
 
+// 查询账单
 void BillVector::queryBill() {
     system("cls");
     string CardName;
@@ -91,6 +98,7 @@ void BillVector::queryBill() {
     }
 }
 
+// 显示账单
 void BillVector::showBill() {
     system("cls");
     cout << "\n\t\t卡号\t\t上机时间\t\t下机时间\t\t金额\t\t类型\n";
@@ -110,6 +118,7 @@ void BillVector::showBill() {
     system("pause");
 }
 
+// 保存 Price 属性值
 void BillVector::savePrice(const string &pricePATH) {
     ofstream pricefile(pricePATH, ios::out | ios::binary);
     if (!pricefile.is_open()) return;
@@ -117,6 +126,7 @@ void BillVector::savePrice(const string &pricePATH) {
     pricefile.close();
 }
 
+// 静态方法，用于保存 Bill 对象到文件
 void BillVector::saveBill(Bill bill, const std::string &billPATH) {
     ofstream billfile(billPATH, ios::app | ios::binary);
     if (!billfile.is_open()) return;
