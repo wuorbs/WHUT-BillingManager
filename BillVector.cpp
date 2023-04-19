@@ -29,7 +29,7 @@ void BillVector::checkPrice() const {
     system("pause");
 }
 
-/ 重置 Price 属性值
+// 重置 Price 属性值
 void BillVector::resetPrice() {
     double NewPrice;
     system("cls");
@@ -101,6 +101,7 @@ void BillVector::queryBill() {
 // 显示账单
 void BillVector::showBill() {
     system("cls");
+    double totBalance = 0;
     cout << "\n\t\t卡号\t\t上机时间\t\t下机时间\t\t金额\t\t类型\n";
     for (auto it: vec) {
         cout << "\t\t" << it.CardName << "\t\t";
@@ -112,9 +113,10 @@ void BillVector::showBill() {
         cout << EndTime << '\t';
         cout << setiosflags(ios::fixed) << setprecision(2) << it.Balance << "\t\t";
         if (it.Type == COST) cout << "消费\n";
-        else if (it.Type == RECHARGE) cout << "充值\n";
-        else if (it.Type == REFUND) cout << "退费\n";
+        else if (it.Type == RECHARGE) cout << "充值\n", totBalance += it.Balance;
+        else if (it.Type == REFUND) cout << "退费\n", totBalance += it.Balance;
     }
+    cout << "\n\t\t\t\t总营业额：" << totBalance << "\n\n";
     system("pause");
 }
 

@@ -101,6 +101,7 @@ void CardVector::queryCard() {
                     cin >> idx;
                 }
                 if (idx == 0) return;
+                idx--;
                 cout << "\n\t\t\t卡号\t\t状态\t余额\t上次使用时间\n";
                 cout << "\t\t\t" << topMatches[idx].CardName << "\t\t";
                 if (topMatches[idx].Status == UNUSE) cout << "未上机\t";
@@ -113,8 +114,8 @@ void CardVector::queryCard() {
             system("pause");
         } else {
             system("cls");
-            cout << "\n\t\t\t\t卡号\t\t状态\t余额\t上次使用时间\n";
-            cout << "\t\t" << CardName << "\t\t";
+            cout << "\n\t\t\t卡号\t\t状态\t余额\t上次使用时间\n";
+            cout << "\t\t\t" << CardName << "\t\t";
             if (p->Status == UNUSE) cout << "未上机\t";
             else cout << "上机\t";
             cout << setiosflags(ios::fixed) << setprecision(2) << p->Balance << '\t';

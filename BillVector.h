@@ -66,7 +66,7 @@ private:
     vector<Bill> vec;
 
     // 存储账单的价格
-    double Price{};
+    double Price;
 };
 
 

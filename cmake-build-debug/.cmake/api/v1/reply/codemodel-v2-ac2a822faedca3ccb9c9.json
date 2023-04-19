@@ -27,7 +27,7 @@
 					[
 						0
 					],
-					"name" : "Billing_Management",
+					"name" : "Billing_Manager",
 					"targetIndexes" : 
 					[
 						0
@@ -38,9 +38,9 @@
 			[
 				{
 					"directoryIndex" : 0,
-					"id" : "Billing_Management::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-Billing_Management-Debug-a5873239a02a6b992050.json",
-					"name" : "Billing_Management",
+					"id" : "Billing_Manager::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-Billing_Manager-Debug-3d41d9700045014ba4da.json",
+					"name" : "Billing_Manager",
 					"projectIndex" : 0
 				}
 			]

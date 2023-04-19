@@ -2,10 +2,10 @@
 	"artifacts" : 
 	[
 		{
-			"path" : "Billing_Management.exe"
+			"path" : "Billing_Manager.exe"
 		},
 		{
-			"path" : "Billing_Management.pdb"
+			"path" : "Billing_Manager.pdb"
 		}
 	],
 	"backtrace" : 1,
@@ -63,7 +63,7 @@
 			]
 		}
 	],
-	"id" : "Billing_Management::@6890427a1f51a3e7e1df",
+	"id" : "Billing_Manager::@6890427a1f51a3e7e1df",
 	"link" : 
 	{
 		"commandFragments" : 
@@ -83,8 +83,8 @@
 		],
 		"language" : "CXX"
 	},
-	"name" : "Billing_Management",
-	"nameOnDisk" : "Billing_Management.exe",
+	"name" : "Billing_Manager",
+	"nameOnDisk" : "Billing_Manager.exe",
 	"paths" : 
 	{
 		"build" : ".",
